@@ -72,7 +72,7 @@
     "build-helper": "mkdir -p ./dist/browser && NODE_ENV=production ./node_modules/.bin/babel ./src/getClassName.js --out-file ./dist/browser/getClassName.js --source-maps --no-babelrc --plugins @babel/plugin-transform-modules-commonjs,@babel/plugin-transform-flow-strip-types --presets @babel/preset-env  && npm run build-schema-helper",
     "build-schema-helper": "mkdir -p ./dist/browser/schemas && NODE_ENV=production ./node_modules/.bin/babel ./src/schemas/optionsDefaults.js --out-file ./dist/browser/schemas/optionsDefaults.js --source-maps --no-babelrc --plugins @babel/plugin-transform-modules-commonjs,@babel/plugin-transform-flow-strip-types --presets @babel/preset-env",
     "lint": "eslint ./src && flow",
-    "postinstall": "yarn && yarn run build",
+    "postinstall": "yarn install --ignore-scripts && yarn run build",
     "test": "jest"
   },
   "version": "1.0.0"
