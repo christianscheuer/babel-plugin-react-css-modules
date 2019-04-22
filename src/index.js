@@ -117,7 +117,7 @@ export default ({
   };
 
   const getTargetResourcePath = (path: *, stats: *) => {
-    const targetFileDirectoryPath = dirname(stats.file.opts.filename);
+    const targetFileDirectoryPath = dirname(stats.file.opts.filename).replace(/sfsurface\/src\/shared/, 'shared'); //Work around metro bundler bug
 
     if (path.node.source.value.startsWith('.')) {
       return resolve(targetFileDirectoryPath, path.node.source.value);
